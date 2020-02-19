@@ -25,4 +25,19 @@ frame.getContenPane().add(b);
 
 使用JFrame类创建GUI界面时，其组件的布局组织示意图如图：
 
-![JFrame窗口组件组织](/home/xiao_qi/Documents/Java后端/notes/img/深度截图_选择区域_20200212104253.png)
+![JFrame窗口组件组织](/home/xiao_qi/Documents/Java后端/Swing/img/深度截图_选择区域_20200212104253.png)
+
+### 2.窗体组件类结构
+
+![窗体组件类结构](/home/xiao_qi/Documents/Java后端/Swing/img/深度截图_选择区域_20200217113843.png)
+
+### 3.Swing常用组件
+
+![Swing常用组件](/home/xiao_qi/Documents/Java后端/Swing/img/深度截图_选择区域_20200217114043.png)
+
+![Swing常用组件](/home/xiao_qi/Documents/Java后端/Swing/img/深度截图_选择区域_20200217114358.png)
+
+![Swing常用组件](/home/xiao_qi/Documents/Java后端/Swing/img/深度截图_选择区域_20200217114646.png)
+
+#### 3.1 窗体JFrame
+

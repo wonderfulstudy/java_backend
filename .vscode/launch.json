@@ -6,18 +6,36 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch) - .java",
+            "name": "Debug (Launch) - Current File",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
             "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-demo001<Java后端_2f87dcd2>",
+            "request": "launch",
+            "mainClass": "Java核心基础.练习项目.demo001",
+            "projectName": "Java后端_2f87dcd2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-demo002<Java后端_2f87dcd2>",
+            "request": "launch",
+            "mainClass": "Java核心基础.练习项目.demo002",
+            "projectName": "Java后端_2f87dcd2"
         },
         {
             "type": "java",
             "name": "Debug (Launch)-JFrameDemo<Java后端_2f87dcd2>",
             "request": "launch",
             "mainClass": "Swing.Swing_project.JFram类创建窗口.JFrameDemo",
+            "projectName": "Java后端_2f87dcd2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Demo<Java后端_2f87dcd2>",
+            "request": "launch",
+            "mainClass": "Swing.Swing_project.Java_Swing基础.Demo",
             "projectName": "Java后端_2f87dcd2"
         }
     ]
