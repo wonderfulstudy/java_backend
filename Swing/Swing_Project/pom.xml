@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>cn.jyf</groupId>
-  <artifactId>Test</artifactId>
+  <artifactId>Swing_Project</artifactId>
   <version>1.0</version>
 
-  <name>Test</name>
+  <name>Swing_Project</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
