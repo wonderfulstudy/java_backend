@@ -39,5 +39,5 @@ frame.getContenPane().add(b);
 
 ![Swing常用组件](/home/xiao_qi/Documents/Java后端/Swing/img/深度截图_选择区域_20200217114646.png)
 
-#### 3.1 窗体JFrame
+#### 
 
