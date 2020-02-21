@@ -7,7 +7,6 @@ public class Demo009{
     /**
      * 网格组布局管理器
      * 
-     * 
      */
     JFrame f=new JFrame();//主窗体
     Container c;//主容器

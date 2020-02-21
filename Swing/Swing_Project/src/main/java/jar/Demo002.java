@@ -8,7 +8,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Demo002 extends JDialog{
-
+    /**
+     * JDialog组件
+     * @param frame
+     */
     public Demo002(JFrame frame){
         /**
          * 第一个参数,父窗体对象

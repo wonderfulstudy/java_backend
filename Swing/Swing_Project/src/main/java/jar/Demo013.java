@@ -5,6 +5,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Demo013 extends JFrame{
+    /**
+     * Java密码框组件
+     */
     public Demo013(){
         setBounds(100,100,350,100);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

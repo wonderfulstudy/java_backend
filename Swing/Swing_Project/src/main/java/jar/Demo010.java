@@ -5,6 +5,9 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Demo010 extends JFrame{
+    /**
+     * Java下拉列表框组件
+     */
     public Demo010(){
         setBounds(100,100,190,120);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

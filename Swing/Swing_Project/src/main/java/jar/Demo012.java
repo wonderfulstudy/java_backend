@@ -5,6 +5,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Demo012 extends JFrame{
+    /**
+     * Java文本框组件
+     */
     public Demo012(){
         setBounds(100,100,400,150);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

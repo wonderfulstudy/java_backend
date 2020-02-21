@@ -4,13 +4,11 @@ import javax.swing.*;
 
 import java.awt.*;
 
-/**
- * 使用Java中的Swing组件创建窗体
- * 
- */
-
 public class Demo001 extends JFrame{
-
+    /**
+     * 使用Java中的Swing组件创建窗体
+     * 
+     */
     public Demo001(){
         setVisible(true);//设置窗体可见
         // setTitle("窗体标题");//设置窗体标题
