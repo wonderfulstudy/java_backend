@@ -72,7 +72,7 @@ SQL语句分类：
 
 -   查看所有数据库：SHOW DATABASES
 
--   切换（选择要操作的）数据库：USE 数据库名
+-   切换（选择要操作的）数据库：USE database_name
 
 -   创建数据库：CREATE DATABASE [IF NOT EXISTS] mydb1 [CHARSET=utf8]
 
@@ -85,11 +85,11 @@ SQL语句分类：
 -   创建表：
 
 ```sql
-CREATE TABLE [IF NOT EXISTS] 表名(
-    列名 列类型,
-    列名 列类型,
-    ...
-    列名 列类型
+CREATE TABLE [IF NOT EXISTS] table_name(
+    column_name1 data_type(size),
+	column_name2 data_type(size),
+	column_name3 data_type(size),
+	....
 );
 ```
 
@@ -102,13 +102,13 @@ SHOW TABLES;
 -   查看表结构：
 
 ```sql
-DESC 表名;
+DESC table_name;
 ```
 
 -   删除表：
 
 ```sql
-DROP TABLE 表名;
+DROP TABLE table_name;
 ```
 
 -   修改表：前缀：`ALTER TABLE 表名`
@@ -148,3 +148,60 @@ DROP TABLE 表名;
     ```
 
 ## 第三章：DML（数据操作语言）
+
+### 1.插入数据
+
+-   INSERT INTO table_name (column1,column2,column3,...) VALUES (*value1*,*value2*,*value3*,...);
+	-   在表名后给出要插入的列名，其他没有指定的列等同与插入null值，所以插图记录总是插入一行，不可能是半行
+    -   在VALUES后给出列值，值的顺序和个数必须与前面指定的列对应
+-   INSERT INTO table_name VALUES (value1,value2,value3,...);
+    -   没有给出要插入的列，那么表示插入所有列
+    -   值的个数必须是该表列的个数
+    -   值的顺序，必须与表创建时给出的列的顺序相同
+
+### 2.修改数据
+
+-   UPDATE table_name SET column1=value1, column2=value2, ... [WHERE option];
+    -   条件是可选的
+        -   条件必须是一个boolean类型的值或表达式
+        -   运算符：=、!=、<>、>、<、>=、<=、BETWEEN...AND、IN(...)、IS NULL、NOT、OR、AND
+
+### 3.删除数据
+
+-   DELETE FROM table_name [WHERE option];
+-   TRUNCATE TABLE table_name;
+    -   TRUNCATE是DDL语句它是先删除drop该表，再create该表，而且无法回滚。
+
+## 第四章：DCL（数据控制语言）
+
+### 1.创建用户
+
+-   CREATE USER user_name@ip_addres IDENTIFIED BY 'password';
+    -   用户只能在指定的IP地址上登录
+-   CREATE USER user_name@'%' IDENTIFIED BY 'password';
+    -   用户可以在任意IP地址上登录
+
+### 2.给用户授权
+
+-   GRANT 权限1, ..., 权限n ON database.* TP user_name@ip_address;
+    -   权限、用户、数据库
+    -   给用户分配在指定的数据库上的指定的权限
+-   GRANT ALL ON database.* TO user_name@ip_address;
+    -   给用户分配指定数据库上的所有权限
+
+### 3.撤销授权
+
+-   REVOKE 权限1, ... ,权限n ON database.* FROM user_name@ip_address;
+    -   撤销指定用户在指定数据库上的指定权限
+
+### 4.查看权限
+
+-   SHOW GRANTS FOR user_name@ip_address
+    -   查看指定用户的权限
+
+### 5.删除用户
+
+-   DROP USER user_name@ip_address
+
+
+
