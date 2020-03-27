@@ -712,11 +712,27 @@ Map接口中不直接提供Iterator，如果要使用Iterator实现Map集合的�
 
 当出现Hash冲突的时候为了保证程序的正常执行，会在冲突的位置上将所有Hash冲突的内容转为链表保存。
 
+## 第二十章：认识反射机制
 
+### 1.反射机制简介
 
+Java语言之所以有如此众多的开源技术支撑，很大一部分是由于Java的反射机制。所有的技术实现的目标只有一点：重用性。
 
+对于反射技术首先考虑的是“反”与“正”的操作，所谓的“正”操作指的是当我们使用一个类的时候，一定先导入程序所在的包，而后根据包使用类对象。而“反”的操作是根据类对象反推出对象的类型。
 
+如果要实现反的处理操作，首先采用的就是Object类中提供的操作方法：
 
+-   获取Class对象信息：public final Class<?> getClass()
 
+### 2.Class类对象的三种实例化模式
 
+反射机制的核心操作都是通过Class类对象展开的，要获得Class类的实例化对象可以采用三种方式完成。
+
+1.  【object类支持】Object类可以根据实例化对象获取Class对象：public final Class<?> getClass()
+    -   这种方式的缺陷：如果只是想获得Class类对象，则必须产生指定类对象后才可以获得
+2.  【JVM直接支持】采用“类.class”的形式实例化
+    -   特点：如果要采用此种模式，则必须导入程序所对应的开发包
+3.  【Class类支持】在Class类中提供有一个static方法：
+    -   加载类：public static Class<?> forName(String className) throws ClassNotFoundException
+    -   这种模式最大的特点是可以直接采用字符串的形式定义要使用的类型，并且程序中不需要编写任何的import语句。如果此时要使用的类型对象不存在则会抛出"java.lang.ClassNotFoundException"异常。
 
