@@ -203,5 +203,63 @@ DROP TABLE table_name;
 
 -   DROP USER user_name@ip_address
 
+## 第五章：DQL（数据查询语言）
+
+### 1.基本查询
+
+#### 1.1 字段（列）控制
+
+##### 1）查询所有列
+
+```sql
+SELECT * FROM table_name;
+SELECT * FROM emp;
+```
+
+2）查询指定列
+
+```sql
+SELECT column1 [, column2, ... , columnN] FROM table_name;
+SELECT empno ename, sal comm FROM table_name;
+```
+
+3）完全重复的记录只一次
+
+当查询结果中的多行记录一模一样时，只显示一行，一般查询所有列时很少会有这种情况，但只查询一列（或几列）时，这种可能就大了！
+
+```sql
+SELECT DISTINCT *  | column1 [, column2, ... , columnN] FROM table_name;
+SELECT DISTINCT sal FROM emp;
+```
+
+4）列运算
+
+-   数量类型的列可以做加、减、乘、除运算
+
+```sql
+SELECT sql*5 FROM emp;
+SELECT sal+comm FROM emp;
+```
+
+-   字符串类型可以做连续运算
+
+```sql
+SELECT CONCAT ('$', sal) FROM emp;
+```
+
+-   转换NULL值
+
+有时需要把NULL转换成其他值，
+
+```sql
+SELECT IFNULL (comm, 0)+1000 FROM emp;
+```
+
+-->	IFNULL(comm, 0)：如果comm中存在NULL值，那么当成0来运算。
+
+-   给列起别名
+
+
+
 
 

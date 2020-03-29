@@ -1,3 +1,11 @@
+/**
+ * @Description: JFrame窗口创建与使用
+ * @Author: smallSeven
+ * @Date: 2020-03-11 12:17:36
+ * @LastEditors: smallSeven
+ * @LastEditTime: 2020-03-29 12:25:18
+ * @FilePath: /Swing_Project/src/main/java/jar/Demo001.java
+ */
 package jar;
 
 import javax.swing.*;
@@ -5,10 +13,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Demo001 extends JFrame{
-    /**
-     * 使用Java中的Swing组件创建窗体
-     * 
-     */
     public Demo001(){
         setVisible(true);//设置窗体可见
         // setTitle("窗体标题");//设置窗体标题
