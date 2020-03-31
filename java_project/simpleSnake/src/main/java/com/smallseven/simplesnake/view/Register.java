@@ -1,3 +1,11 @@
+/** 
+ * @Description: 贪吃蛇注册用户界面
+ * @Author: smallSeven
+ * @Date: 2020-03-31 10:26:15
+ * @LastEditors: smallSeven
+ * @LastEditTime: 2020-03-31 10:33:45
+ * @FilePath: /simpleSnake/src/main/java/com/smallseven/simplesnake/view/Register.java
+ */
 package com.smallseven.simplesnake.view;
 
 import java.awt.GridBagLayout;
@@ -12,18 +20,13 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-
-/*
- * @Description: 贪吃蛇注册用户界面
- * @Author: smallSeven
- * @Date: 2020-03-30 15:45:49
- * @LastEditors: smallSeven
- * @LastEditTime: 2020-03-30 16:13:16
- * @FilePath: /simpleSnake/src/main/java/com/smallseven/simplesnake/view/Register.java
- */
-
  public class Register extends JFrame implements ActionListener{
-    JLabel nameLabel = new JLabel("用户名："),
+         /**
+          *
+          */
+         private static final long serialVersionUID = 2315035628297403382L;
+         JLabel nameLabel = new JLabel(
+                         "用户名："),
             passwordLabel = new JLabel("密码："),
             rpasswordLabel = new JLabel("重复密码："),
             emailLabel = new JLabel("邮箱：");
@@ -31,18 +34,19 @@ import javax.swing.JTextField;
                 userEmail = new JTextField(10);
     JPasswordField passwordField = new JPasswordField(10),
                     rPasswordField = new JPasswordField(10);
-    JButton registerButton = new JButton(),
-            exitButton = new JButton();
+    JButton registerButton = new JButton("注册"),
+            exitButton = new JButton("退出");
     public Register(){
-        super();
-        super.setTitle("用户注册");
-        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        super.setBounds(400, 400, 400, 300);
+        setTitle("用户注册");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(400, 400, 400, 300);
+        setResizable(false);
 
         JPanel jPanel = new JPanel(new GridBagLayout());
         GridBagConstraints constraints1 = new GridBagConstraints(),
                             constraints2 = new GridBagConstraints(),
-                            constraints3 = new GridBagConstraints();
+                            constraints3 = new GridBagConstraints(),
+                            constraints4 = new GridBagConstraints();
 
         jPanel.add(nameLabel);
         jPanel.add(userName);
@@ -55,16 +59,19 @@ import javax.swing.JTextField;
         constraints3.gridy = 3;
         jPanel.add(emailLabel, constraints3);
         jPanel.add(userEmail, constraints3);
-        super.add(jPanel);
-        super.setVisible(true);
+        constraints4.gridy = 4;
+        jPanel.add(registerButton, constraints4);
+        jPanel.add(exitButton, constraints4);
+        add(jPanel);
+        setVisible(true);
      }
 
      @Override
      public void actionPerformed(ActionEvent e){
          if (e.getSource() == registerButton){
-
+                
          }else if (e.getSource() == exitButton){
-
+                System.exit(1);
          }
      }
 }

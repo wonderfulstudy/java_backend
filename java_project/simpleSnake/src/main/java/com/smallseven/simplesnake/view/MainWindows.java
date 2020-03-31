@@ -3,7 +3,7 @@
  * @Author: smallSeven
  * @Date: 2020-03-30 17:10:03
  * @LastEditors: smallSeven
- * @LastEditTime: 2020-03-31 10:27:51
+ * @LastEditTime: 2020-03-31 10:33:34
  * @FilePath: /simpleSnake/src/main/java/com/smallseven/simplesnake/view/MainWindows.java
  */
 package com.smallseven.simplesnake.view;
