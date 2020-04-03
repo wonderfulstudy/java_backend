@@ -3,7 +3,7 @@
  * @Author: smallSeven
  * @Date: 2020-03-31 10:26:15
  * @LastEditors: smallSeven
- * @LastEditTime: 2020-03-31 10:33:01
+ * @LastEditTime: 2020-03-31 11:24:33
  * @FilePath: /simpleSnake/src/main/java/com/smallseven/simplesnake/view/Login.java
  */
 package com.smallseven.simplesnake.view;
@@ -71,6 +71,6 @@ public class Login extends JFrame implements ActionListener {
         }
     }
     public static void main(final String[] args) {
-        new Login();
+        new MainWindows();
     }
 }
