@@ -506,7 +506,24 @@ Java中提供有两类的内存操作流：
 
 ### 4.RandomAccessFile
 
-## 第十五章：类集框架简介
+## 第十五章：类集框架
+
+### 一、综述
+
+Java集合框架定义了几个接口，这些接口决定类Collection类的基本特性。不同的是具体类仅仅提供了标准接口的不同实现。
+
+```mermaid
+graph TD
+		A[Collection] --- B[Set]
+		A --- C[List]
+		A --- D[Queue]
+		B --- E[SortedSet]
+		F[Map] --- G[SortedMap]
+```
+
+从图可知，Java结合类的主要是由两个接口派生而出——Collection和Map，Collection和Map是集合框架的根接口。
+
+
 
 ### 1.类集框架简介
 
@@ -533,7 +550,7 @@ java.util.Collection是单值集合操作的最大的父接口，在该接口之
 | 05   | public boolean remove(Object o)                  | 普通 | 数据删除，需要equals（）方法支持       |
 | 06   | public int size()                                | 普通 | 获取数据长度                           |
 | 07   | public Object[] toArray()                        | 普通 | 将集合变为对象数组返回                 |
-| 08   | public Iterator<E> iterator()                    | 普通 | 将集合变为Iterator接口                 |
+| 08   | public Iterator\<E> iterator()                   | 普通 | 将集合变为Iterator接口                 |
 
 集合操作的两个最为常用的方法：【增加】add()、【输出】Iterator()，在JDK1.5之前Collection只是一个独立的接口，从JDK1.5之后提供有了Iterable父接口，并且JDK1.8之后针对Iterable接口也得到了一些扩充。在JDK1.2～JDK1.4时进行集合的使用往往会直接操作Collection接口，JDK1.5之后很多情况是操作它的子接口：【可重复】List子接口、【不可重复】Set子接口。
 
@@ -543,7 +560,7 @@ java.util.Collection是单值集合操作的最大的父接口，在该接口之
 
 List是Collection子接口，允许保存有重复元素数据。接口定义：
 
-public interface List<E> extends Collection<E>
+public interface List\<E> extends Collection\<E>
 
 List对Collection的方法进行了扩充。
 
@@ -551,7 +568,7 @@ List对Collection的方法进行了扩充。
 | ---- | -------------------------------------- | ---- | -------------------- |
 | 01   | public E get(int index)                | 普通 | 获取指定索引上的数据 |
 | 02   | public E set(int index,     E element) | 普通 | 修改指定索引数据     |
-| 03   | public ListIterator<E> listIterator()  | 普通 | 返回ListIterator接口 |
+| 03   | public ListIterator\<E> listIterator() | 普通 | 返回ListIterator接口 |
 
 List本身依然是一个接口，对于接口的使用一定要使用子类来完成，List的三个重要的子类有：ArrayList、Vector、LinkedList。
 
@@ -646,7 +663,7 @@ Map核心方法：
 | 02   | public V get(Object key)               | 普通 | 根据Key查询数据             |
 | 03   | public Set<Map.Entry<K,V>> entrySet()  | 普通 | 将Map集合转为Set集合        |
 | 04   | public boolean containsKey(Object key) | 普通 | 查询制定的Key是否存在       |
-| 05   | public Set<K> keySet()                 | 普通 | 将Map集合中的Key转为Set集合 |
+| 05   | public Set\<K> keySet()                | 普通 | 将Map集合中的Key转为Set集合 |
 | 06   | public V remove(Object key)            | 普通 | 根据Key删除数据             |
 
 JDK1.9之后Map接口扩充了许多静态方法供用户使用。

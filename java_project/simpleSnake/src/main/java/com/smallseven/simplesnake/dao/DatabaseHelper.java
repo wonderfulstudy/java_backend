@@ -3,7 +3,7 @@
  * @Author: smallSeven
  * @Date: 2020-04-01 14:03:33
  * @LastEditors: smallSeven
- * @LastEditTime: 2020-04-03 16:45:49
+ * @LastEditTime: 2020-04-04 19:27:32
  * @FilePath: /simpleSnake/src/main/java/com/smallseven/simplesnake/dao/DatabaseHelper.java
  */
 
@@ -15,26 +15,42 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.smallseven.simplesnake.services.User;
-
 public class DatabaseHelper {
+    /** 
+     * @Description: jdbc四大参数
+     * @param jdbcUser 数据库root用户名
+     * @param jdbcPassword root密码
+     * @param jdbcUrl 数据库连接
+     * @param jdbcDriver 数据库驱动
+     * @return: 
+     */
     private String jdbcUser = "root";
     private String jdbcPassword = "123456";
-    private String jdbcUrl = "jdbc:mysql://localhost:3306/simpleSnakeDB";
+    private String jdbcUrl = "jdbc:mysql://localhost:3306/snakeDB";
     private String jdbcDriver = "com.mysql.jdbc.Driver";
 
     public DatabaseHelper() {
 
     }
 
+    
     public void testConnection() {
+        /** 
+         * @Description: 测试数据连接方法
+         * @param connection 数据库连接对象
+         * @param statement 
+         * @return: 
+         */
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
         try {
             Class.forName(jdbcDriver);
-            Connection connection =DriverManager.getConnection(jdbcUrl, jdbcUser, jdbcPassword);
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM user");
-            while (resultSet.next()){
-                System.out.println(resultSet.getString(1));
+            connection =DriverManager.getConnection(jdbcUrl, jdbcUser, jdbcPassword);// 获取连接
+            statement = connection.createStatement();// 获取statement实例，用以执行SQL语句
+            resultSet = statement.executeQuery("SELECT * FROM user");//实行sql语句
+            while (resultSet.next()){// 遍历结果集
+                System.out.println(resultSet.getString(2));
             }
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
@@ -42,6 +58,30 @@ public class DatabaseHelper {
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }finally{
+            if (resultSet != null)
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+            if (statement != null)
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+            if(connection != null)
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
         }
 
     }

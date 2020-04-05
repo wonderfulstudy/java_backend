@@ -2,8 +2,8 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.smallseven</groupId>
-    <artifactId>simpleSnake</artifactId>
-    <version>0.1</version>
+    <artifactId>xmlDemo</artifactId>
+    <version>1.0</version>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -17,9 +17,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.19</version>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/dom4j-2.1.1.jar</systemPath>
+            <version>2.1.1</version>
         </dependency>
     </dependencies>
     <build>
